@@ -8,7 +8,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final _formkey=GlobalKey<FormState>();
+  String _email ,_password;
+
+
+
   @override
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -111,14 +118,19 @@ class _HomePageState extends State<HomePage> {
             Padding(
 
               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0,),
-                child:    TextFormField(decoration: InputDecoration(labelText: "Email"),),
+
+                child:    TextFormField(decoration:InputDecoration(labelText: "Email"),
+
+                ),
 
 
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0,),
               child:
-              TextFormField(decoration: InputDecoration(labelText: "Name"),),
+              TextFormField(decoration: InputDecoration(labelText: "Name"),
+              onSaved: (input)=>_email=input,
+              ),
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10,vertical: 0,),
